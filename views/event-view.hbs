@@ -1,0 +1,32 @@
+<h1>{{event.name}}</h1>
+<p>Deadline: {{event.deadLine}}</p>
+<p>{{event.description}}</p>
+
+<ul>
+  {{#each tasks}}
+    <li>
+      Priority: {{priority}} --- {{name}} --- Status: {{status}}
+      <button><a href="/task/edit/{{_id}}">Edit Task</a></button>
+    </li>
+  {{/each}}
+</ul>
+
+<form action="/task/create" method="POST">
+  <input type="text" name="name" placeholder="Task Name">
+  <label for="status">Task Current Status</label>
+  <select name="status" id="status">
+    <option value="Concluído">Concluído</option>
+    <option value="Em Andamento">Em Andamento</option>
+    <option value="Stand By">Stand By</option>
+  </select>
+  <label for="priority">Task Priority</label>
+  <select name="priority" id="priority">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <textarea name="description" placeholder="Task Description" rows="4" cols="50"></textarea>
+  <input type="hidden" name="eventID" value="{{event._id}}">
+  <button type="submit">Create New Task</button>
+</form>

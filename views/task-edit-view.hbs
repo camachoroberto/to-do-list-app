@@ -1,0 +1,20 @@
+<form action="/task/edit" method="POST">
+  <input type="text" name="name" value="{{name}}">
+  <label for="status">Task Current Status</label>
+  <select name="status" id="status">
+    <option value="{{status}}">{{status}}</option>
+    <option value="Concluído">Concluído</option>
+    <option value="Em Andamento">Em Andamento</option>
+    <option value="Stand By">Stand By</option>
+  </select>
+  <label for="priority">Task Priority</label>
+  <select name="priority" id="priority">
+    <option value="{{priority}}">{{priority}}</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <textarea name="description" rows="4" cols="50">{{description}}</textarea>
+  <button type="submit">Edit Task</button>
+</form>
