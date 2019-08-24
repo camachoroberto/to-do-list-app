@@ -1,0 +1,4 @@
+#PLEASE REMEMBER TO CREATE A .emv FILE WITH:
+
+PORT=3000
+ENV=development
